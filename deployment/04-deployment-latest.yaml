@@ -37,8 +37,8 @@ spec:
           maintainer: Samuel Straka
     spec:
       containers:
-      - name: innovate
-        image: fsainfrastrakasamuelregistry.azurecr.io/straka-cicd.westeurope.azurecontainer.io/innovate:72b9e1c
+      - name: innovate-latest
+        image: fsainfrastrakasamuelregistry.azurecr.io/straka-cicd.westeurope.azurecontainer.io/innovate:latest
         ports:
         - containerPort: 80
         imagePullPolicy: Always
@@ -62,13 +62,3 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
-        readinessProbe:
-          tcpSocket:
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        livenessProbe:
-          tcpSocket:
-            port: 80
-          initialDelaySeconds: 15
-          periodSeconds: 20
